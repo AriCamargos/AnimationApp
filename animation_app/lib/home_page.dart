@@ -1,7 +1,8 @@
 import 'package:animation/button_page.dart';
 import 'package:animation/delivery_page.dart';
-import 'package:animation/form_page.dart';
+import 'package:animation/picture_page.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -32,48 +33,73 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       );
 
+  space() => const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: null,
-        title: const Text('Exemplos Animação'),
+        title: const Text('Menu de Animação'),
       ),
       body: Column(
         children: [
-          ListTile(
-            leading: android(),
-            title: Text(
-              'Delivery',
-              style: letter(),
-            ),
-            onTap: () => open(
-              (_) => const DeliveryPage(),
-            ),
-          ),
-          const Divider(),
-          ListTile(
-            leading: android(),
-            title: Text(
-              'Botão',
-              style: letter(),
-            ),
-            onTap: () => open(
-              (_) => const ButtonPage(),
+          space(),
+          Card(
+            elevation: 10,
+            child: ListTile(
+              leading: android(),
+              onTap: () => open(
+                (_) => const DeliveryPage(),
+              ),
+              title: Text(
+                'Delivery',
+                style: letter(),
+              ),
+              subtitle: const Text('Animação para página delivery'),
             ),
           ),
-          const Divider(),
-          /* ListTile(
-            leading: android(),
-            title: Text(
-              'Formulário',
-              style: letter(),
+          Card(
+            elevation: 10,
+            child: ListTile(
+              leading: android(),
+              title: Text(
+                'Button',
+                style: letter(),
+              ),
+              subtitle: const Text('Animação com botão on/off'),
+              onTap: () => open(
+                (_) => const ButtonPage(),
+              ),
             ),
-            onTap: () => open(
-              (_) => const FormPage(),
+          ),
+          Card(
+            elevation: 10,
+            child: ListTile(
+              leading: android(),
+              title: Text(
+                'Picture',
+                style: letter(),
+              ),
+              subtitle: const Text('Navegação com foto em movimento'),
+              onTap: () => open(
+                (_) => const PicturePage(),
+              ),
             ),
-          ), */
+          ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Lottie.network(
+              'https://assets4.lottiefiles.com/packages/lf20_vhyjpyhg.json');
+        },
+        child: const Icon(
+          Icons.sentiment_satisfied_alt_outlined,
+        ),
+        elevation: 10,
       ),
     );
   }
