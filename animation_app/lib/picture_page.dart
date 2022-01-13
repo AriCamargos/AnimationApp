@@ -13,15 +13,14 @@ class _PicturePageState extends State<PicturePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnimatedSize(
-        duration: const Duration(seconds: 4),
-        child: SizedBox(
-          height: double.infinity,
-          child: Image.asset('lamb.jpg'),
+      body: ElevatedButton(
+        // ignore: avoid_returning_null_for_void
+        onPressed: () => null,
+        child: const Text(
+          'Imagem',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
       ),
     );
   }
 }
-
-mixin AnimationCtrl {}
