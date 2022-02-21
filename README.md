@@ -34,7 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Dart
 
 ## 💻 Projeto
-Estudo realizado sobre animações no Flutter. A home é um meno com opções de animações no ínico tem um menu e abrindo cada opção da lista, se encontra as animações do aplicativo. Em breve, serão implementados novas funcionalidades e melhorias.
+Estudo realizado sobre animações no Flutter. A home é um menu com opções de animações e abrindo cada opção da lista, se encontra as animações do aplicativo. Em breve, serão implementados novas funcionalidades e melhorias.
   
 ### Imagem do projeto
 
